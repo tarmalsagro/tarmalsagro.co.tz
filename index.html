@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tarmals Agro Limited — Coming Soon</title>
+  <meta name="description" content="Tarmals Agro Limited — Strong Roots, Sustainable Growth. Contact: info@tarmalsagro.co.tz">
+  <meta property="og:title" content="Tarmals Agro Limited">
+  <meta property="og:description" content="Strong Roots, Sustainable Growth.">
+  <meta property="og:type" content="website">
+  <style>
+    :root {
+      --brand: #2e7d32; /* update to your exact green later */
+      --text: #0b2220;
+      --bg: #f6fbf7;
+      --card: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, var(--bg), #eef6ef);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .card {
+      width: 100%;
+      max-width: 760px;
+      background: var(--card);
+      border: 1px solid #e5efe7;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 10px 24px rgba(0,0,0,.06);
+    }
+    .logo {
+      width: 64px; height: 64px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: var(--brand);
+      color: white;
+      font-weight: 700;
+      font-size: 24px;
+      letter-spacing: .5px;
+    }
+    h1 {
+      margin: 16px 0 8px;
+      font-size: clamp(24px, 4vw, 34px);
+      line-height: 1.1;
+    }
+    p.lead {
+      margin: 0 0 16px;
+      font-size: clamp(14px, 2.5vw, 18px);
+      color: #254;
+    }
+    .grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 640px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+    .panel {
+      border: 1px dashed #d7e7da;
+      border-radius: 12px;
+      padding: 16px;
+      background: #fafdfb;
+    }
+    a {
+      color: var(--brand);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+    footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #4a6b5a;
+    }
+    .muted { color: #567; }
+    .btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: var(--brand);
+      color: #fff; font-weight: 600;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <main class="card" role="main">
+    <div style="display:flex;gap:16px;align-items:center">
+      <div class="logo" aria-hidden="true">TA</div>
+      <div>
+        <h1>Welcome to Tarmals Agro Limited</h1>
+        <p class="lead">Strong Roots, Sustainable Growth</p>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:16px">
+      <p>We're putting the finishing touches on our new website. In the meantime, please reach us using the details below.</p>
+    </div>
+
+    <section class="grid" aria-label="Contact details">
+      <div class="panel">
+        <h2 style="margin-top:0;font-size:18px">Email</h2>
+        <p><a href="mailto:info@tarmalsagro.co.tz">info@tarmalsagro.co.tz</a></p>
+      </div>
+      <div class="panel">
+        <h2 style="margin-top:0;font-size:18px">Company</h2>
+        <p>Tarmals Agro Limited</p>
+        <p class="muted" style="margin-top:-6px">Tanzania</p>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Tarmals Agro Limited • All rights reserved.
+    </footer>
+  </main>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
