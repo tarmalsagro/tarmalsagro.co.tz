@@ -5,15 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tarmals Agro Limited — Coming Soon</title>
   <meta name="description" content="Tarmals Agro Limited — Strong Roots, Sustainable Growth. Contact: info@tarmalsagro.co.tz">
-  <meta property="og:title" content="Tarmals Agro Limited">
-  <meta property="og:description" content="Strong Roots, Sustainable Growth.">
-  <meta property="og:type" content="website">
+
+  <!--
+    🛠 HOW TO BRAND THIS PAGE
+    1) Put your logo file into /assets as logo.svg (preferred) or logo.png (fallback).
+    2) Set your exact green here: change the HEX value of --brand below.
+       Example Tanzanian greens you might like:
+         #2E7D32 (deep leaf) • #1F8F3A (fresh) • #2BAA66 (vibrant)
+  -->
   <style>
     :root {
-      --brand: #2e7d32; /* update to your exact green later */
+      --brand: #1F8F3A; /* TODO: replace with your exact brand green HEX */
       --text: #0b2220;
       --bg: #f6fbf7;
       --card: #ffffff;
+      --muted: #4a6b5a;
+      --border: #e5efe7;
+      --border-dashed: #d7e7da;
     }
     * { box-sizing: border-box; }
     html, body { height: 100%; }
@@ -28,59 +36,61 @@
     }
     .card {
       width: 100%;
-      max-width: 760px;
+      max-width: 820px;
       background: var(--card);
-      border: 1px solid #e5efe7;
+      border: 1px solid var(--border);
       border-radius: 16px;
       padding: 28px;
       box-shadow: 0 10px 24px rgba(0,0,0,.06);
     }
-    .logo {
-      width: 64px; height: 64px;
-      border-radius: 12px;
+    header {
       display: grid;
-      place-items: center;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+    .brandmark {
+      width: 72px; height: 72px; border-radius: 14px;
+      display: grid; place-items: center; overflow: hidden;
       background: var(--brand);
-      color: white;
-      font-weight: 700;
-      font-size: 24px;
-      letter-spacing: .5px;
+    }
+    .brandmark img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .brandmark .fallback {
+      color: #fff; font-weight: 700; font-size: 22px; letter-spacing: .5px;
     }
     h1 {
-      margin: 16px 0 8px;
+      margin: 8px 0 6px;
       font-size: clamp(24px, 4vw, 34px);
       line-height: 1.1;
     }
-    p.lead {
-      margin: 0 0 16px;
+    .lead {
+      margin: 0;
       font-size: clamp(14px, 2.5vw, 18px);
       color: #254;
+    }
+    .panel {
+      border: 1px dashed var(--border-dashed);
+      border-radius: 12px;
+      padding: 16px;
+      background: #fafdfb;
+      margin-top: 16px;
     }
     .grid {
       display: grid;
       gap: 16px;
       grid-template-columns: 1fr;
+      margin-top: 12px;
     }
     @media (min-width: 640px) {
       .grid { grid-template-columns: 1fr 1fr; }
     }
-    .panel {
-      border: 1px dashed #d7e7da;
-      border-radius: 12px;
-      padding: 16px;
-      background: #fafdfb;
-    }
-    a {
-      color: var(--brand);
-      text-decoration: none;
-    }
+    a { color: var(--brand); text-decoration: none; }
     a:hover { text-decoration: underline; }
     footer {
       margin-top: 20px;
       font-size: 14px;
-      color: #4a6b5a;
+      color: var(--muted);
     }
-    .muted { color: #567; }
     .btn {
       display: inline-block;
       padding: 10px 14px;
@@ -89,19 +99,28 @@
       color: #fff; font-weight: 600;
       text-decoration: none;
     }
+    .chip {
+      display:inline-block; background: rgba(31,143,58,.08); color: var(--brand);
+      border: 1px solid rgba(31,143,58,.25); border-radius: 999px; padding: 6px 10px; font-size: 12px; font-weight: 600;
+    }
   </style>
 </head>
 <body>
   <main class="card" role="main">
-    <div style="display:flex;gap:16px;align-items:center">
-      <div class="logo" aria-hidden="true">TA</div>
-      <div>
-        <h1>Welcome to Tarmals Agro Limited</h1>
-        <p class="lead">Strong Roots, Sustainable Growth</p>
+    <header>
+      <div class="brandmark" aria-hidden="true">
+        <picture>
+          <source srcset="assets/logo.svg" type="image/svg+xml">
+          <img src="assets/logo.png" alt="Tarmals Agro Limited logo" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'fallback',textContent:'TA'}));">
+        </picture>
       </div>
-    </div>
+      <div>
+        <h1>Tarmals Agro Limited</h1>
+        <p class="lead">Strong Roots, Sustainable Growth <span class="chip">Coming Soon</span></p>
+      </div>
+    </header>
 
-    <div class="panel" style="margin-top:16px">
+    <div class="panel">
       <p>We're putting the finishing touches on our new website. In the meantime, please reach us using the details below.</p>
     </div>
 
@@ -113,7 +132,7 @@
       <div class="panel">
         <h2 style="margin-top:0;font-size:18px">Company</h2>
         <p>Tarmals Agro Limited</p>
-        <p class="muted" style="margin-top:-6px">Tanzania</p>
+        <p style="margin-top:-6px;color:var(--muted)">Tanzania</p>
       </div>
     </section>
 
@@ -126,3 +145,4 @@
   </script>
 </body>
 </html>
+
