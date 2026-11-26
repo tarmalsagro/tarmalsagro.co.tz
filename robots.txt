@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.tarmalsagro.co.tz/sitemap.xml
